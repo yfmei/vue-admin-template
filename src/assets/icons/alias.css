@@ -1,0 +1,14 @@
+/**
+ * 设置图标库前缀为 icon, 添加至iconfont.css中
+ * @author yfmei
+ * 2018/7/5
+ */
+
+[class^="icon"], [class*="icon"]
+  /*这里有空格*/
+{ font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

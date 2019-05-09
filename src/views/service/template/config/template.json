@@ -1,0 +1,183 @@
+{
+  "header": "管理员",
+  "hide": "",
+  "filter": {
+    "meta": {
+      "表单元素 provinceId": {
+        "name": "基础数据 province",
+        "child": {
+          "name": "级联数据 city",
+          "field": "表单元素 cityId"
+        }
+      },
+      "表单元素 cityId": {
+        "name": "基础数据 city",
+        "load": "是否主动加载，级联数据被动加载 false"
+      }
+    },
+    "fields": [
+      {
+        "prop": "userId",
+        "label": "用户名",
+        "type": "input"
+      },
+      {
+        "prop": "realName",
+        "label": "姓名",
+        "type": "input"
+      },
+      {
+        "prop": "phoneNumber",
+        "label": "手机号",
+        "type": "input"
+      }
+    ],
+    "operate": ["edit"]// 不设置 默认为查询重置和新增 ["search", "close", "export", "approval]
+  },
+  "table":{
+    "prop": ["userName", "realName", "phoneNumber", "userTypeName", "staffId", "dataSourceName", "statusName", "updateTime"],
+    "label": ["用户名", "姓名", "手机号码", "用户类型", "员工编号", "数据来源", "账号状态", "更新时间"],
+    "width": [], // 对应列宽, 可不设置
+//    "operate": {"button" :[]}, // 无操作
+    "operate": {"buttons": ["edit", "del"], "width": 180} // 表格操作按钮以及操作栏列宽，没有按钮设为 {}, 不设置默认为修改和删除
+    // ["edit", "del", "reset", "view", "download", "grant"]
+  },
+  "form": {
+    "header": "管理员",
+    "footer": "",
+    "meta": {
+      "provinceId": {
+        "name": "province",
+        "child": {
+          "name": "city",
+          "field": "cityId"
+        }
+      },
+      "cityId": {
+        "name": "city",
+        "load": "false"
+      }
+    },
+    "rows": [
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "userId",
+            "label": "用户ID",
+            "type": "input",
+            "className": "",
+            "rules": [
+              {
+                "required": true, "message": "用户ID不能为空", "trigger": "blur"
+              },
+              {
+                "type": "number", "message": "必须为数字值", "trigger": "blur"
+              },
+              {
+                "min": 4, "max": 10, "message": "长度在 4 到 10 个字符", "trigger": "blur"
+              }
+            ],
+            "key": true, // 主键, 新增页面不显示
+            "add": false, // 新增页面不显示
+            "edit": false, // 编辑页面不显示（暂时未用，推测使用场景：新增用户信息输入密码，密码修改单独处理，不在修改表单显示）
+            "disabled": true // 修改页面禁止修改
+
+          },
+          {
+            "prop": "userName",
+            "label": "用户名",
+            "type": "input",
+            "className": "",
+            "rules": [
+              {
+                "required": true, "message": "用户名不能为空", "trigger": "blur"
+              },
+              {
+                "min": 4, "max": 10, "message": "长度在 4 到 10 个字符", "trigger": "blur"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "phoneType",
+            "label": "手机型号",
+            "type": "switch",
+            "className": "",
+            "event": {
+              "value": ["Android", "IOS", "value[0]: true显示的文本, value[1]: false显示的文本"],
+              "on": ["true展示的字段: packageName", "releaseSha1", "debugSha1", "releaseSha256", "debugSha256", "releaseMd5", "debugMd5"],
+              "off": ["false展示的字段: bundleId"]
+            },
+            "default": true
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "userId",
+            "label": "用户ID",
+            "type": "input",
+            "className": "",
+            "rules": [
+              {
+                "required": true, "message": "用户名不能为空", "trigger": "blur"
+              },
+              {
+                "type": "number", "message": "必须为数字值", "trigger": "blur"
+              },
+              {
+                "min": 4, "max": 10, "message": "长度在 4 到 10 个字符", "trigger": "blur"
+              }
+            ],
+            "key": true
+          },
+          {
+            "prop": "provinceId",
+            "label": "省份",
+            "type": "select",
+            "className": "",
+            "rules": [
+              {
+                "required": true, "message": "省份不能为空", "trigger": "blur"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "email",
+            "label": "邮箱",
+            "type": "input",
+            "className": "",
+            "rules": [
+              {
+                "required": true, "message": "邮箱不能为空", "trigger": "blur"
+              },
+              {
+                "max": 30, "message": "长度不能超过 30 个字符", "trigger": "blur"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "operate": ["edit"] // 表单不需要提交可以设为 []，默认为提交 ["submit"] 
+  },
+  "addUrl": "/xxx/super/xxx",
+  "delUrl": "/xxx/super/xxx",
+  "editUrl": "/xxx/super/xxx",
+  "getListUrl": "/xxx/super/getList",
+  "getInfoUrl": "/xxx/super/getInfoById",
+  "downloadUrl": "task/super/downloadTask",
+  "setMenuUrl": "/product/super/getProductInfoByProId"
+}

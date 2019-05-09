@@ -1,0 +1,154 @@
+{
+  "header": "管理员",
+  "hide": "",
+  "filter": {
+    "maxCol": 2,
+    "meta": {
+      "logType": {
+        "name": "logType"
+      }
+    },
+    "fields": [
+      {
+        "prop": "phoneNumber",
+        "label": "手机号",
+        "type": "input"
+      },
+      {
+        "prop": "logType",
+        "label": "日志类型",
+        "type": "select"
+      },
+      {
+        "prop": "startTime",
+        "label": "开始时间",
+        "type": "date"
+      },
+      {
+        "prop": "endTime",
+        "label": "结束时间",
+        "type": "date"
+      }
+    ],
+    "operate": ["search", "close"]
+  },
+  "table":{
+    "prop": ["phoneNumber", "adminName", "userName", "logTypeName", "logTitle", "ipAddr", "createTime"],
+    "label": ["手机号", "操作员", "用户", "日志类型", "日志标题", "IP", "开始时间"],
+    "operate": {"button" :["view"]}
+  },
+  "form": {
+    "header": "日志",
+    "footer": "",
+    "rows": [
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "sequenceId",
+            "label": "日志编号",
+            "type": "input",
+            "key": true
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "phoneNumber",
+            "label": "手机号",
+            "type": "input"
+          },
+          {
+            "prop": "userName",
+            "label": "用户",
+            "type": "input",
+            "className": "",
+            "rules": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "adminName",
+            "label": "操作员",
+            "type": "input",
+            "className": "",
+            "rules": [
+            ]
+          },
+          {
+            "prop": "logTypeName",
+            "label": "类型",
+            "type": "input",
+            "className": "",
+            "rules": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "logTitle",
+            "label": "标题",
+            "type": "input",
+            "className": "",
+            "rules": [
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "logContent",
+            "label": "内容",
+            "type": "textarea",
+            "className": "",
+            "rules": [
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "ipAddr",
+            "label": "IP",
+            "type": "input",
+            "className": "",
+            "rules": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "createTime",
+            "label": "开始时间",
+            "type": "input",
+            "className": "",
+            "rules": [
+            ]
+          }
+        ]
+      }
+    ],
+    "operate": []
+  },
+  "getListUrl": "/log/getLogListPage",
+  "getInfoUrl": "/log/getLogInfoById"
+}

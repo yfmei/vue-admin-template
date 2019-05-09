@@ -1,0 +1,170 @@
+{
+  "header": "用户审批",
+  "hide": "",
+  "filter": {
+    "meta": {
+      "sysId": {
+        "name": "system"
+      },
+      "statusId": {
+        "name": "userStatus"
+      }
+    },
+    "fields": [
+      {
+        "prop": "userName",
+        "label": "用户姓名",
+        "type": "input"
+      },
+      {
+        "prop": "phoneNumber",
+        "label": "手机号码",
+        "type": "input"
+      },
+      {
+        "prop": "sysId",
+        "label": "单位",
+        "type": "select"
+      },
+      {
+        "prop": "statusId",
+        "label": "状态",
+        "type": "select",
+        "default": "11"
+      }
+    ],
+    "operate": ["search", "close", "approval"]
+  },
+  "table":{
+    "select": "true",
+    "prop": ["userName", "phoneNumber", "idTypeName", "sysName", "statusName", "userCode", "updateTime"],
+    "label": ["用户名", "手机号码", "证件类型", "单位名称", "状态", "用户工号", "更新时间"],
+    "operate": {"button" :["view"]}
+  },
+  "form": {
+    "header": "用户信息",
+    "footer": "",
+    "meta": {
+      "idType": {
+        "name": "idType"
+      },
+      "statusId": {
+        "name": "userStatus"
+      },
+      "sysId": {
+        "name": "system"
+      }
+    },
+    "rows": [
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "userId",
+            "label": "用户ID",
+            "type": "input",
+            "key": true
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "userName",
+            "label": "用户名",
+            "type": "input"
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "userCode",
+            "label": "工号",
+            "type": "input",
+            "className": "",
+            "rules": [
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "phoneNumber",
+            "label": "手机号",
+            "type": "input",
+            "className": "",
+            "rules": [
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "idType",
+            "label": "证件类型",
+            "type": "select",
+            "className": "",
+            "rules": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "idCode",
+            "label": "证件号码",
+            "type": "input",
+            "className": "",
+            "rules": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "sysId",
+            "label": "单位名称",
+            "type": "input",
+            "className": "",
+            "rules": [
+            ],
+            "baseData": "system"
+          }
+        ]
+      },
+      {
+        "className": "",
+        "cols": [
+          {
+            "prop": "statusId",
+            "label": "状态",
+            "type": "select",
+            "className": "",
+            "rules": [
+            ],
+            "baseData": "userStatus"
+          }
+        ]
+      }
+    ],
+    "operate": []
+  },
+  "getListUrl": "/userBase/super/getUserInfoList",
+  "addUrl": "/userBase/super/addUserInfo",
+  "editUrl": "/userBase/super/updateUserInfo",
+  "delUrl": "",
+  "getInfoUrl": "/userBase/super/getUserInfoById"
+}
